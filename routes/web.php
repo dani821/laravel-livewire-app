@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CompanyController;
+use App\Http\Livewire\Companies;
+use App\Http\Livewire\News;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function (){
+    //
+    Route::get('/companies', Companies::class)->name('companies');
+    Route::get('/news', News::class)->name('news');
+});
