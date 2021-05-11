@@ -70,6 +70,7 @@ class News extends Component
             'companies' => [],
         ];
         $this->resetValidation();
+        $this->selectedId = null;
     }
 
     public function create()
