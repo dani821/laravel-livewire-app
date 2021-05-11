@@ -12,7 +12,7 @@ class Companies extends Component
 
     public function render()
     {
-        return view('livewire.company.index',[
+        return view('livewire.Company.index',[
             'companies' => Company::query()->orderBy('id')->paginate(25)
         ]);
     }

@@ -28,7 +28,7 @@ class News extends Component
 
     public function render()
     {
-        return view('livewire.news.index' , [
+        return view('livewire.News.index' , [
             'allNews' => \App\Models\News::query()->orderBy('id')->paginate(25),
             'companies' => Company::query()->select('id','name')->get()
         ]);
